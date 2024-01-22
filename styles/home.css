@@ -1,63 +1,50 @@
-.html,
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-}
-
-.navbar ul {
-    list-style-type: "\1F422";
-    background-color: rgba(57, 79, 244, 0.9);
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 80px;
-    z-index: 10;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    align-items: center;
-    padding-right: 5%;
-    margin: 0;
-}
-
-.navbar ul a {
-    color: #fff;
-    font-size: 1.4rem;
-    font-weight: 600;
-    text-transform: lowercase;
-    letter-spacing: 0.02rem;
-    display: inline-block;
-    padding: 15px 26px 10px;
-    font-style: italic;
-    font-family: "Crimson Text", serif;
-    cursor: pointer;
-}
-
-header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: #48d8a4;
-    padding-top: 200px;
-    padding-bottom: 80px;
-}
-
 h1 {
     font-family: "Mada", sans-serif;
     color: #fff;
     letter-spacing: 0.05rem;
     font-weight: 500;
-    max-width: 860px;
+    max-width: 900px;
     font-size: 3rem;
-    padding-left: 100px;
 }
 
-footer {
-    text-align: center;
-    background-color: #e1b4e5;
-    padding: 25px 0 20px;
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 .title {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+h1 .title:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+h1 .title:nth-child(3) {
+    animation-delay: 1s;
+}
+
+h1 .title:nth-child(4) {
+    animation-delay: 1.5s;
+}
+
+h1 .title:nth-child(5) {
+    animation-delay: 2s;
+}
+
+h1 .title:nth-child(6) {
+    animation-delay: 2.5s;
+}
+
+.flower {
+    max-width: 15%;
 }
