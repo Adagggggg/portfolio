@@ -1,0 +1,557 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+input {
+    padding: 0;
+    font: inherit;
+}
+
+html,
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.app-wrapper {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+
+    min-height: 100vh;
+}
+
+header {
+    grid-column: span 12;
+
+    display: flex;
+    align-items: center;
+
+    padding-top: 1rem;
+    padding-left: 2rem;
+    gap: 1rem;
+
+    background-color: rgb(65, 79, 90);
+}
+
+.header__logo {
+    width: 5rem;
+    height: auto;
+}
+
+.title__1 {
+    color: plum;
+}
+
+.title__2 {
+    color: mediumseagreen;
+}
+
+.title__3 {
+    color: darksalmon;
+}
+
+.title__4 {
+    color: hotpink;
+}
+
+.title__5 {
+    color: darkturquoise;
+}
+
+.title__6 {
+    color: red;
+}
+
+.title__7 {
+    color: greenyellow;
+}
+
+.title__8 {
+    color: burlywood;
+}
+
+.title__9 {
+    color: springgreen;
+}
+
+.title__10 {
+    color: mediumpurple;
+}
+
+.title__11 {
+    color: gold;
+}
+
+.title__12 {
+    color: tomato;
+}
+
+.menu {
+    grid-column: span 12;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+    padding: 0;
+    margin: 0;
+
+    list-style-type: none;
+}
+
+.sub__menu {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-grow: 1;
+    padding: 1rem;
+
+    background-color: rgb(65, 79, 90);
+}
+
+.sub__menu__title {
+    background: inherit;
+    color: white;
+
+    font-size: 1.5rem;
+    font-style: italic;
+    text-decoration: none;
+
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown__menu {
+    position: absolute;
+
+    max-height: 0;
+    padding: 0;
+    margin: 0;
+    top: 100%;
+    line-height: 1.5rem;
+
+    overflow: hidden;
+
+    list-style: none;
+
+    background-color: white;
+
+    z-index: 100;
+}
+
+.sub__menu:hover .dropdown__menu,
+.sub__menu:focus-within .dropdown__menu {
+    max-height: initial;
+    background-color: whitesmoke;
+}
+
+.dropdown__link {
+    display: inline-block;
+    padding: 0.5rem;
+
+    text-decoration: none;
+    color: rgb(13, 57, 90);
+}
+
+.dropdown__link:hover,
+.dropdown__link:focus {
+    background-color: rgb(112, 111, 111);
+    color: whitesmoke;
+    width: 100%;
+}
+
+main {
+    grid-column: span 12;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem;
+    min-height: 43rem;
+
+    background-color: rgb(16, 43, 62);
+}
+
+footer {
+    grid-column: span 12;
+
+    padding: 1rem;
+
+    background-color: rgb(65, 79, 90);
+}
+
+.footer__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 2rem;
+}
+
+.footer__link {
+    font-size: 0.8rem;
+    color: white;
+}
+
+/*---------------------Home page-----------------------*/
+.hero {
+    display: flex;
+    align-items: center;
+
+    padding-left: 10rem;
+    padding-right: 10rem;
+
+    min-height: 40rem;
+}
+
+.hero__pic {
+    max-width: 30rem;
+    height: auto;
+}
+
+.home__intro {
+    font-family: monospace;
+    font-size: 3rem;
+    color: darkkhaki;
+}
+
+.arrow__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow__pic {
+    width: 3rem;
+    margin-bottom: 6rem;
+}
+
+.tool__title,
+.work__title,
+.tool__intro {
+    font-family: monospace;
+    color: deepskyblue;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.tool__intro {
+    font-size: 1rem;
+    color: pink;
+    margin-bottom: 2rem;
+}
+
+.tools {
+    display: flex;
+    flex-wrap: wrap;
+
+    padding-left: 13rem;
+    padding-right: 13rem;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 6rem;
+    gap: 2rem;
+}
+
+.tool__pic {
+    border-radius: 30%;
+    width: 5rem;
+    height: auto;
+}
+
+.tool {
+    color: white;
+    text-align: center;
+}
+
+.skill__category {
+    color: deepskyblue;
+    font-weight: 600;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    padding: 1rem;
+    gap: 3rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+    width: 25rem;
+    border-radius: 14px;
+
+    background-color: rgb(1, 54, 95);
+}
+
+.card__pic {
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+
+    width: 100%;
+    height: auto;
+}
+
+.card__title {
+    color: deepskyblue;
+}
+
+.card__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+
+    justify-content: space-between;
+
+    padding: 1.5rem;
+    gap: 1rem;
+
+    color: white;
+}
+
+.card__text {
+    line-height: 1.4rem;
+}
+
+.card__link {
+    padding: 0.5rem;
+    align-self: center;
+    text-align: center;
+
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-decoration: none;
+
+    border-radius: 5px;
+    background-color: rgb(255, 182, 47);
+    color: rgb(2, 25, 43);
+}
+
+/*---------------------About page-----------------------*/
+.about-wrapper {
+    display: flex;
+
+    max-width: 75rem;
+}
+
+.about__pic {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 50%;
+    margin-right: 3rem;
+}
+
+.text__title {
+    color: deepskyblue;
+}
+
+.texts {
+    display: flex;
+    flex-direction: column;
+
+    padding-left: 12rem;
+    padding-right: 12rem;
+    gap: 2.5rem;
+
+    font-size: 1rem;
+    font-family: monospace;
+    color: white;
+}
+
+.about__keyword {
+    color: rgb(236, 147, 177);
+    font-weight: 650;
+}
+
+.resume__submit {
+    padding: 0.9rem;
+    align-self: flex-end;
+
+    border: none;
+    border-radius: 5px;
+
+    font-weight: bold;
+    font-size: 1rem;
+
+    background-color: forestgreen;
+    color: white;
+
+    cursor: pointer;
+}
+
+/*---------------------Register page-----------------------*/
+.form__title {
+    margin-bottom: 2rem;
+
+    text-align: center;
+
+    color: deepskyblue;
+}
+
+.register {
+    display: grid;
+    grid-template-columns: auto 1fr;
+
+    align-items: center;
+    justify-content: center;
+
+    max-width: 30rem;
+    gap: 1rem;
+    padding: 1.5rem;
+
+    border-radius: 10px;
+    background-color: rgb(1, 54, 95);
+}
+
+.req {
+    margin-left: 0.2rem;
+
+    font-size: 1rem;
+
+    color: red;
+}
+
+.register__label {
+    justify-self: right;
+    color: white;
+}
+
+.register__input {
+    padding: 0.5rem;
+
+    font-size: 0.9rem;
+
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    color: rgb(1, 54, 95);
+}
+
+.message__label {
+    color: white;
+}
+
+.message__input {
+    width: 100%;
+    height: 15rem;
+
+    padding: 1rem;
+
+    font-size: 0.9rem;
+
+    border: 1px solid darkgray;
+    border-radius: 5px;
+    color: rgb(1, 54, 95);
+
+    display: block;
+    resize: vertical;
+}
+
+.register__submit {
+    grid-column: span 2;
+
+    padding: 0.5rem;
+
+    font-weight: bold;
+
+    border: none;
+    border-radius: 5px;
+
+    background-color: forestgreen;
+    color: white;
+
+    cursor: pointer;
+}
+
+/*----------------Responsive-------------------------*/
+
+@media (max-width: 50rem) {
+    .texts {
+        padding-left: 6rem;
+        padding-right: 6rem;
+    }
+}
+
+@media (max-width: 65rem) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    .menu {
+        flex-direction: column;
+    }
+
+    .footer__links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .home__intro {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        min-height: 15rem;
+        padding: 0;
+    }
+
+    .tools {
+        padding: 0;
+    }
+
+    .about__pic {
+        display: none;
+    }
+
+    .form__title {
+        margin-bottom: 1rem;
+    }
+
+    .note {
+        grid-column: span 1;
+    }
+
+    .register {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+    }
+
+    .register__label {
+        justify-self: left;
+    }
+
+    .register__input {
+        margin-bottom: 0.8rem;
+    }
+
+    .annoy-me__container {
+        grid-column: span 1;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .checkbox__label {
+        margin-bottom: 0.5rem;
+    }
+
+    .register__submit {
+        grid-column: span 1;
+        margin-top: 1rem;
+    }
+}
