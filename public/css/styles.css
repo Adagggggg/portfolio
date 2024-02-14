@@ -218,7 +218,7 @@ footer {
 
 .home__intro {
     font-family: monospace;
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: darkkhaki;
 }
 
@@ -235,7 +235,8 @@ footer {
 
 .tool__title,
 .work__title,
-.tool__intro {
+.tool__intro,
+.testimonial__title {
     font-family: monospace;
     color: deepskyblue;
     font-size: 1.5rem;
@@ -269,16 +270,16 @@ footer {
     height: auto;
 }
 
+.tool__pic:hover {
+    scale: 1.1;
+}
+
 .tool {
     color: white;
     text-align: center;
 }
 
-.skill__category {
-    color: deepskyblue;
-    font-weight: 600;
-}
-
+/*-------------------cards----------------------*/
 .cards {
     display: flex;
     flex-wrap: wrap;
@@ -286,16 +287,22 @@ footer {
 
     padding: 1rem;
     gap: 3rem;
+    margin-bottom: 6rem;
 }
 
 .card {
     display: flex;
     flex-direction: column;
 
-    width: 25rem;
+    width: 15rem;
     border-radius: 14px;
 
     background-color: rgb(1, 54, 95);
+}
+
+.card:hover {
+    transform: translateY(1rem);
+    scale: 1.1;
 }
 
 .card__pic {
@@ -333,12 +340,91 @@ footer {
     text-align: center;
 
     font-size: 0.8rem;
+    font-family: "Crimson Text", serif;
     font-weight: bold;
     text-decoration: none;
 
     border-radius: 5px;
     background-color: rgb(255, 182, 47);
     color: rgb(2, 25, 43);
+}
+
+/*---------------------testimonials-----------------------*/
+.testimonials {
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    padding-top: 2rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    gap: 4rem;
+}
+
+.testimonial {
+    display: flex;
+    flex-direction: column;
+
+    padding: 2rem;
+
+    align-items: center;
+    justify-content: center;
+
+    max-width: 20rem;
+    min-height: 25rem;
+
+    color: rgb(2, 25, 43);
+    border-radius: 40px;
+
+    font-size: 0.8rem;
+    font-family: Optima, sans-serif;
+}
+
+.testimonial:hover {
+    scale: 1.2;
+}
+
+#testimonial1 {
+    background-color: #CAA6A6;
+}
+
+#testimonial2 {
+    background-color: #B47B84;
+}
+
+#testimonial3 {
+    background-color: #944E63;
+}
+
+.testimonial__content {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+    line-height: 1.3rem;
+
+    text-indent: 1rem;
+}
+
+.testimonial__author {
+    align-self: flex-end;
+}
+
+.start__quote {
+    color: coral;
+    font-size: 3rem;
+    font-weight: 700;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.end__quote {
+    color: coral;
+    font-size: 3rem;
+    font-weight: bold;
+    align-self: flex-end;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 /*---------------------About page-----------------------*/
@@ -441,16 +527,18 @@ footer {
 }
 
 .message__label {
+    justify-self: right;
     color: white;
 }
 
 .message__input {
-    width: 100%;
+    width: 20rem;
     height: 15rem;
 
-    padding: 1rem;
+    padding: 0.5rem;
 
     font-size: 0.9rem;
+    font: inherit;
 
     border: 1px solid darkgray;
     border-radius: 5px;
@@ -477,11 +565,23 @@ footer {
 }
 
 /*----------------Responsive-------------------------*/
-
 @media (max-width: 50rem) {
+    .card {
+        width: 13rem;
+    }
+
+    .hero__pic {
+        width: 10rem;
+    }
+
     .texts {
-        padding-left: 6rem;
-        padding-right: 6rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .message__input {
+        width: 15rem;
+
     }
 }
 
@@ -514,6 +614,11 @@ footer {
         padding: 0;
     }
 
+    .testimonials {
+        padding: 0;
+        gap: 2rem;
+    }
+
     .about__pic {
         display: none;
     }
@@ -535,19 +640,12 @@ footer {
         justify-self: left;
     }
 
+    .message__label {
+        justify-self: left;
+    }
+
     .register__input {
         margin-bottom: 0.8rem;
-    }
-
-    .annoy-me__container {
-        grid-column: span 1;
-
-        display: flex;
-        flex-direction: column;
-    }
-
-    .checkbox__label {
-        margin-bottom: 0.5rem;
     }
 
     .register__submit {
