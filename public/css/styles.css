@@ -93,24 +93,24 @@ header {
     grid-column: span 12;
 
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: flex-end;
 
     padding: 0;
     margin: 0;
 
     list-style-type: none;
+    background-color: rgb(65, 79, 90);
 }
 
 .sub__menu {
     position: relative;
 
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 
-    flex-grow: 1;
     padding: 1rem;
+    margin-right: 2rem;
 
     background-color: rgb(65, 79, 90);
 }
@@ -119,7 +119,8 @@ header {
     background: inherit;
     color: white;
 
-    font-size: 1.5rem;
+
+    font-size: 1.2rem;
     font-style: italic;
     text-decoration: none;
 
@@ -143,12 +144,23 @@ header {
     background-color: white;
 
     z-index: 100;
+
+    rotate: x 90deg;
+    transform-origin: top;
+}
+
+@media (prefers-reduced-motion:no-preference) {
+    .dropdown__menu {
+        transition: rotate 0.5s;
+    }
 }
 
 .sub__menu:hover .dropdown__menu,
 .sub__menu:focus-within .dropdown__menu {
     max-height: initial;
     background-color: whitesmoke;
+
+    rotate: x 0deg;
 }
 
 .dropdown__link {
@@ -219,7 +231,7 @@ footer {
 .home__intro {
     font-family: monospace;
     font-size: 2.5rem;
-    color: darkkhaki;
+    color: burlywood;
 }
 
 .arrow__container {
@@ -260,7 +272,7 @@ footer {
     justify-content: center;
     align-items: center;
 
-    margin-bottom: 6rem;
+    margin-bottom: 18rem;
     gap: 2rem;
 }
 
@@ -287,7 +299,7 @@ footer {
 
     padding: 1rem;
     gap: 3rem;
-    margin-bottom: 6rem;
+    margin-bottom: 18rem;
 }
 
 .card {
@@ -357,10 +369,12 @@ footer {
     align-items: center;
     justify-content: center;
 
-    padding-top: 2rem;
-    padding-left: 5rem;
-    padding-right: 5rem;
-    gap: 4rem;
+    margin: 4rem;
+    margin-top: 4rem;
+}
+
+.testimonial:first-child {
+    margin-left: 0;
 }
 
 .testimonial {
@@ -373,29 +387,37 @@ footer {
     justify-content: center;
 
     max-width: 20rem;
-    min-height: 25rem;
+    min-height: 30rem;
 
     color: rgb(2, 25, 43);
     border-radius: 40px;
 
     font-size: 0.8rem;
     font-family: Optima, sans-serif;
+
+    margin-left: -5rem;
+    transition: all 1s ease;
+    box-shadow: 0 4px 8px pink;
 }
 
 .testimonial:hover {
     scale: 1.2;
+    z-index: 2;
 }
 
 #testimonial1 {
-    background-color: #CAA6A6;
+    background-color: #0D9276;
+    color: white;
 }
 
 #testimonial2 {
-    background-color: #B47B84;
+    background-color: #BBE2EC;
+    color: rgb(2, 25, 43);
 }
 
 #testimonial3 {
-    background-color: #944E63;
+    background-color: #FFF6E9;
+    color: rgb(2, 25, 43);
 }
 
 .testimonial__content {
@@ -428,6 +450,12 @@ footer {
 }
 
 /*---------------------About page-----------------------*/
+
+#about__main {
+    background-color: rgb(228, 207, 183);
+
+}
+
 .about-wrapper {
     display: flex;
 
@@ -442,7 +470,7 @@ footer {
 }
 
 .text__title {
-    color: deepskyblue;
+    color: rgb(1, 54, 95);
 }
 
 .texts {
@@ -451,20 +479,21 @@ footer {
 
     padding-left: 12rem;
     padding-right: 12rem;
-    gap: 2.5rem;
+    gap: 1.5rem;
+    line-height: 1.4rem;
 
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-family: monospace;
-    color: white;
+    color: #252525;
 }
 
 .about__keyword {
-    color: rgb(236, 147, 177);
-    font-weight: 650;
+    color: #3f52e8;
+    font-weight: 550;
 }
 
 .resume__submit {
-    padding: 0.9rem;
+    padding: 0.7rem;
     align-self: flex-end;
 
     border: none;
@@ -472,8 +501,11 @@ footer {
 
     font-weight: bold;
     font-size: 1rem;
+    font-family: sans-serif;
 
-    background-color: forestgreen;
+    text-decoration: none;
+
+    background-color: #0D9276;
     color: white;
 
     cursor: pointer;
@@ -558,7 +590,7 @@ footer {
     border: none;
     border-radius: 5px;
 
-    background-color: forestgreen;
+    background-color: #0D9276;
     color: white;
 
     cursor: pointer;
@@ -581,17 +613,18 @@ footer {
 
     .message__input {
         width: 15rem;
+    }
 
+    .menu {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
     }
 }
 
 @media (max-width: 65rem) {
     h1 {
         font-size: 1.5rem;
-    }
-
-    .menu {
-        flex-direction: column;
     }
 
     .footer__links {
@@ -612,11 +645,34 @@ footer {
 
     .tools {
         padding: 0;
+        margin-bottom: 5rem;
     }
 
     .testimonials {
-        padding: 0;
         gap: 2rem;
+        margin: 2rem;
+    }
+
+    .testimonial {
+        align-items: center;
+        justify-content: center;
+
+        margin-left: 0rem;
+        transition: none;
+        box-shadow: none;
+    }
+
+    .testimonial:hover {
+        scale: none;
+    }
+
+    .card:hover {
+        transform: none;
+        scale: none
+    }
+
+    .cards {
+        margin-bottom: 5rem;
     }
 
     .about__pic {
