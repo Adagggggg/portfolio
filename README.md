@@ -1,4 +1,4 @@
 # portfolio
 
 
- https://adagggggg.github.io/portfolio/
+ https://adagggggg.github.io/portfolio/public
